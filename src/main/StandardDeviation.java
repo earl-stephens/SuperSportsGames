@@ -39,4 +39,16 @@ public class StandardDeviation {
 		}
 		return intermediateArray;
 	}
+	
+	public double intermediateSum() {
+		double[] arrayToSum = squares();
+		double sum = 0.00;
+		
+		for(double value : arrayToSum) {
+			sum = sum + value;
+		}
+		
+		DecimalFormat df = new DecimalFormat("#.##");
+		return Double.parseDouble(df.format(sum));
+	}
 }

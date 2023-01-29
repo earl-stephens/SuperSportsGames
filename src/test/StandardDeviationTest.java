@@ -49,4 +49,10 @@ class StandardDeviationTest {
 		Assert.assertEquals(expectedArray[1], sd.squares()[1], 0.02);
 		Assert.assertEquals(expectedArray[3], sd.squares()[3], 0.02);
 	}
+	
+	@Test
+	void testForIntermediateSum() {
+		
+		Assert.assertEquals(343.20, sd.intermediateSum(), 0.02);
+	}
 }
