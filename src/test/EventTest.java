@@ -48,4 +48,12 @@ class EventTest {
 		
 		Assert.assertEquals(26.60, event.average_age(), 0.02);
 	}
+	
+	@Test
+	void testForStandardDeviation() {
+		int[] ages = {24, 30, 18, 20, 41};
+		Event event = new Event("Curling", ages);
+		
+		Assert.assertEquals(8.28, event.standard_deviation_age(), 0.02);
+	}
 }

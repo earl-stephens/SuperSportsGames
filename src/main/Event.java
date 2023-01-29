@@ -47,4 +47,9 @@ public class Event {
 		DecimalFormat df = new DecimalFormat("#.##");
 		return Double.parseDouble(df.format(sum / ages.length));
 	}
+	
+	public double standard_deviation_age() {
+		StandardDeviation sd = new StandardDeviation(ages);
+		return sd.standardDeviation();
+	}
 }
