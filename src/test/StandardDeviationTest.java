@@ -55,4 +55,16 @@ class StandardDeviationTest {
 		
 		Assert.assertEquals(343.20, sd.intermediateSum(), 0.02);
 	}
+	
+	@Test
+	void testForIntermediateMean() {
+		
+		Assert.assertEquals(68.64, sd.intermediateMean(), 0.02);
+	}
+	
+	@Test
+	void testForStandardDeviation() {
+		
+		Assert.assertEquals(8.28, sd.standardDeviation(), 0.02);
+	}
 }

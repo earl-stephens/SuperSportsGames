@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 
 public class StandardDeviation {
 	int[] ages;
+	DecimalFormat df = new DecimalFormat("#.##");
+
 	public StandardDeviation(int[] ages) {
 		this.ages = ages;
 	}
@@ -19,7 +21,6 @@ public class StandardDeviation {
 	public double mean() {
 		double mean = 0.00;
 		mean = (double)sum() / ages.length;
-		DecimalFormat df = new DecimalFormat("#.##");
 		return Double.parseDouble(df.format(mean));
 	}
 	
@@ -48,7 +49,14 @@ public class StandardDeviation {
 			sum = sum + value;
 		}
 		
-		DecimalFormat df = new DecimalFormat("#.##");
 		return Double.parseDouble(df.format(sum));
+	}
+	
+	public double intermediateMean() {
+		return Double.parseDouble(df.format(intermediateSum() / ages.length));
+	}
+	
+	public double standardDeviation() {
+		return Double.parseDouble(df.format(Math.sqrt(intermediateMean())));
 	}
 }
