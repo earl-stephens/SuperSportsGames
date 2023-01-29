@@ -16,4 +16,28 @@ class EventTest {
 		Assert.assertNotNull(event);
 	}
 
+	@Test
+	void testForGettingNameAndAges() {
+		int[] ages = {24, 30, 18, 20, 41};
+		Event event = new Event("Curling", ages);
+		
+		Assert.assertEquals("Curling", event.getName());
+		Assert.assertEquals(ages, event.getAges());
+	}
+	
+	@Test
+	void testForMax_Age() {
+		int[] ages = {24, 30, 18, 20, 41};
+		Event event = new Event("Curling", ages);
+		
+		Assert.assertEquals(41, event.max_age());
+	}
+	
+	@Test
+	void testForMinAge() {
+		int[] ages = {24, 30, 18, 20, 41};
+		Event event = new Event("Curling", ages);
+		
+		Assert.assertEquals(18, event.min_age());
+	}
 }
