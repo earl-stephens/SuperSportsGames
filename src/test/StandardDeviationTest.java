@@ -27,4 +27,10 @@ class StandardDeviationTest {
 		
 		Assert.assertEquals(133, sd.sum());
 	}
+	
+	@Test
+	void testForCalculatingMean() {
+		
+		Assert.assertEquals(26.60, sd.mean(), 0.02);
+	}
 }
