@@ -40,4 +40,12 @@ class EventTest {
 		
 		Assert.assertEquals(18, event.min_age());
 	}
+	
+	@Test
+	void testForAverageAge() {
+		int[] ages = {24, 30, 18, 20, 41};
+		Event event = new Event("Curling", ages);
+		
+		Assert.assertEquals(26.60, event.average_age(), 0.02);
+	}
 }

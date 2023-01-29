@@ -1,5 +1,7 @@
 package main;
 
+import java.text.DecimalFormat;
+
 public class Event {
 	private String name;
 	private int[] ages;
@@ -35,5 +37,14 @@ public class Event {
 			}
 		}
 		return minAge;
+	}
+	
+	public double average_age() {
+		double sum = 0.0;
+		for(int age : ages) {
+			sum = sum + age;
+		}
+		DecimalFormat df = new DecimalFormat("#.##");
+		return Double.parseDouble(df.format(sum / ages.length));
 	}
 }
