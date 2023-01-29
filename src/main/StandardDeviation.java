@@ -3,14 +3,14 @@ package main;
 import java.text.DecimalFormat;
 
 public class StandardDeviation {
-	int[] ages;
+	private int[] ages;
 	DecimalFormat df = new DecimalFormat("#.##");
 
 	public StandardDeviation(int[] ages) {
 		this.ages = ages;
 	}
 	
-	public int sum() {
+	private int sum() {
 		int sum = 0;
 		for(int age : ages) {
 			sum = sum + age;
@@ -18,13 +18,13 @@ public class StandardDeviation {
 		return sum;
 	}
 	
-	public double mean() {
+	private double mean() {
 		double mean = 0.00;
 		mean = (double)sum() / ages.length;
 		return Double.parseDouble(df.format(mean));
 	}
 	
-	public double[] originalsMinusMean() {
+	private double[] originalsMinusMean() {
 		double mean = mean();
 		double[] intermediateArray = new double[ages.length];
 		for(int i = 0; i < ages.length; i++) {
@@ -33,7 +33,7 @@ public class StandardDeviation {
 		return intermediateArray;
 	}
 	
-	public double[] squares() {
+	private double[] squares() {
 		double[] intermediateArray = originalsMinusMean();
 		for(int i = 0; i < ages.length; i++) {
 			intermediateArray[i] = intermediateArray[i]  * intermediateArray[i];
@@ -41,7 +41,7 @@ public class StandardDeviation {
 		return intermediateArray;
 	}
 	
-	public double intermediateSum() {
+	private double intermediateSum() {
 		double[] arrayToSum = squares();
 		double sum = 0.00;
 		
@@ -52,7 +52,7 @@ public class StandardDeviation {
 		return Double.parseDouble(df.format(sum));
 	}
 	
-	public double intermediateMean() {
+	private double intermediateMean() {
 		return Double.parseDouble(df.format(intermediateSum() / ages.length));
 	}
 	
