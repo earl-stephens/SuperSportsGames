@@ -22,4 +22,13 @@ public class StandardDeviation {
 		DecimalFormat df = new DecimalFormat("#.##");
 		return Double.parseDouble(df.format(mean));
 	}
+	
+	public double[] originalsMinusMean() {
+		double mean = mean();
+		double[] intermediateArray = new double[ages.length];
+		for(int i = 0; i < ages.length; i++) {
+			intermediateArray[i] = ages[i] - mean;
+		}
+		return intermediateArray;
+	}
 }
