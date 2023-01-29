@@ -31,4 +31,12 @@ public class StandardDeviation {
 		}
 		return intermediateArray;
 	}
+	
+	public double[] squares() {
+		double[] intermediateArray = originalsMinusMean();
+		for(int i = 0; i < ages.length; i++) {
+			intermediateArray[i] = intermediateArray[i]  * intermediateArray[i];
+		}
+		return intermediateArray;
+	}
 }

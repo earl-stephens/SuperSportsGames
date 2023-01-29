@@ -41,4 +41,12 @@ class StandardDeviationTest {
 		Assert.assertEquals(expectedArray[2], sd.originalsMinusMean()[2], 0.02);
 		Assert.assertEquals(expectedArray[4], sd.originalsMinusMean()[4], 0.02);
 	}
+	
+	@Test
+	void testForSquares() {
+		double[] expectedArray = {6.76, 11.56, 73.96, 43.56, 207.36};
+		
+		Assert.assertEquals(expectedArray[1], sd.squares()[1], 0.02);
+		Assert.assertEquals(expectedArray[3], sd.squares()[3], 0.02);
+	}
 }
